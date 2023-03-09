@@ -16,6 +16,7 @@ def sair(conexao):
 def dados_recebidos(conexao, dados):
     if dados == b'':
         return sair(conexao)
+    conexao.enviar(b':serve PONG server :' + dados.split(b' ',1)[1])   
     print(conexao, dados)
 
 
